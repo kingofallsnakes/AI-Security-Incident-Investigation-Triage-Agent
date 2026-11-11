@@ -1,0 +1,13 @@
+{
+  "incident_id": "INC-DEMO-1001",
+  "source": "identity-monitor",
+  "severity": "medium",
+  "timestamp": "2026-11-10T13:50:00-05:00",
+  "affected_user": "analyst-demo",
+  "affected_host": "workstation-7",
+  "indicators": [
+    {"kind": "ip", "value": "198.51.100.23", "source": "alert-rule", "context": "synthetic source address"},
+    {"kind": "ip", "value": "8.8.8.8", "source": "alert-rule", "context": "synthetic related entity"}
+  ],
+  "description": "Synthetic alert for offline demonstration."
+}

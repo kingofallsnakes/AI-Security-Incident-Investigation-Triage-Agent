@@ -1,0 +1,377 @@
+{
+  "incident_id": "INC-DEMO-1001",
+  "status": "completed",
+  "started_at": "2026-11-11T04:51:53.160836Z",
+  "completed_at": "2026-11-11T04:51:53.163786Z",
+  "alert": {
+    "incident_id": "INC-DEMO-1001",
+    "source": "identity-monitor",
+    "severity": "medium",
+    "timestamp": "2026-11-10T18:50:00Z",
+    "affected_user": "analyst-demo",
+    "affected_host": "workstation-7",
+    "indicators": [
+      {
+        "kind": "ip",
+        "value": "198.51.100.23",
+        "source": "alert-rule",
+        "context": "synthetic source address"
+      },
+      {
+        "kind": "ip",
+        "value": "8.8.8.8",
+        "source": "alert-rule",
+        "context": "synthetic related entity"
+      }
+    ],
+    "description": "Synthetic alert for offline demonstration."
+  },
+  "search_window": {
+    "start": "2026-11-09T18:50:00Z",
+    "end": "2026-11-10T20:50:00Z",
+    "max_results": 500,
+    "page_size": 100
+  },
+  "data_sources_queried": [
+    "synthetic-events",
+    "offline-reputation-mock"
+  ],
+  "events": [
+    {
+      "timestamp": "2026-11-10T13:42:00Z",
+      "event_id": "EVT-1001",
+      "source_index": "auth-logs",
+      "document_id": "auth-001",
+      "event_type": "login",
+      "username": "analyst-demo",
+      "source_ip": "198.51.100.23",
+      "hostname": "workstation-7",
+      "outcome": "failure",
+      "fields": {
+        "@timestamp": "2026-11-10T13:42:00Z",
+        "event": {
+          "id": "EVT-1001",
+          "action": "login",
+          "outcome": "failure"
+        },
+        "user": {
+          "name": "analyst-demo"
+        },
+        "source": {
+          "ip": "198.51.100.23"
+        },
+        "host": {
+          "name": "workstation-7"
+        },
+        "password": "[REDACTED]"
+      }
+    },
+    {
+      "timestamp": "2026-11-10T13:45:00Z",
+      "event_id": "EVT-1002",
+      "source_index": "auth-logs",
+      "document_id": "auth-002",
+      "event_type": "login",
+      "username": "analyst-demo",
+      "source_ip": "198.51.100.23",
+      "hostname": "workstation-7",
+      "outcome": "failure",
+      "fields": {
+        "@timestamp": "2026-11-10T13:45:00Z",
+        "event": {
+          "id": "EVT-1002",
+          "action": "login",
+          "outcome": "failure"
+        },
+        "user": {
+          "name": "analyst-demo"
+        },
+        "source": {
+          "ip": "198.51.100.23"
+        },
+        "host": {
+          "name": "workstation-7"
+        }
+      }
+    },
+    {
+      "timestamp": "2026-11-10T13:47:00Z",
+      "event_id": "EVT-1003",
+      "source_index": "auth-logs",
+      "document_id": "auth-003",
+      "event_type": "login",
+      "username": "analyst-demo",
+      "source_ip": "198.51.100.23",
+      "hostname": "workstation-7",
+      "outcome": "success",
+      "fields": {
+        "@timestamp": "2026-11-10T13:47:00Z",
+        "event": {
+          "id": "EVT-1003",
+          "action": "login",
+          "outcome": "success"
+        },
+        "user": {
+          "name": "analyst-demo"
+        },
+        "source": {
+          "ip": "198.51.100.23"
+        },
+        "host": {
+          "name": "workstation-7"
+        },
+        "authorization": "[REDACTED]"
+      }
+    },
+    {
+      "timestamp": "2026-11-10T14:01:00Z",
+      "event_id": "EVT-2004",
+      "source_index": "server-logs",
+      "document_id": "srv-004",
+      "event_type": "http_request",
+      "username": "analyst-demo",
+      "source_ip": "8.8.8.8",
+      "hostname": "app-01",
+      "outcome": "success",
+      "fields": {
+        "@timestamp": "2026-11-10T14:01:00Z",
+        "event": {
+          "id": "EVT-2004",
+          "action": "http_request",
+          "outcome": "success"
+        },
+        "user": {
+          "name": "analyst-demo"
+        },
+        "source": {
+          "ip": "8.8.8.8"
+        },
+        "host": {
+          "name": "app-01"
+        }
+      }
+    }
+  ],
+  "indicators": [
+    {
+      "kind": "ip",
+      "value": "198.51.100.23",
+      "source": "alert-rule",
+      "context": "synthetic source address"
+    },
+    {
+      "kind": "ip",
+      "value": "8.8.8.8",
+      "source": "alert-rule",
+      "context": "synthetic related entity"
+    },
+    {
+      "kind": "username",
+      "value": "analyst-demo",
+      "source": "alert.affected_user",
+      "context": ""
+    },
+    {
+      "kind": "hostname",
+      "value": "workstation-7",
+      "source": "alert.affected_host",
+      "context": ""
+    }
+  ],
+  "enrichment_results": [
+    {
+      "ip": "8.8.8.8",
+      "queried": true,
+      "lookup_time": "2026-11-11T04:51:53.163065Z",
+      "provider": "Offline mock",
+      "abuse_confidence_score": 0,
+      "metadata": {
+        "source": "offline mock"
+      },
+      "error": null
+    }
+  ],
+  "geo_locations": [
+    {
+      "ip": "8.8.8.8",
+      "country_code": "US",
+      "country_name": "United States",
+      "city": "Mountain View",
+      "latitude": 37.39,
+      "longitude": -122.08,
+      "is_mock": true
+    }
+  ],
+  "timeline": [
+    {
+      "timestamp": "2026-11-10T13:42:00Z",
+      "summary": "login; failure; user=analyst-demo; ip=198.51.100.23; host=workstation-7",
+      "evidence_refs": [
+        "auth-logs/auth-001 (event EVT-1001)"
+      ],
+      "uncertainty": null
+    },
+    {
+      "timestamp": "2026-11-10T13:45:00Z",
+      "summary": "login; failure; user=analyst-demo; ip=198.51.100.23; host=workstation-7",
+      "evidence_refs": [
+        "auth-logs/auth-002 (event EVT-1002)"
+      ],
+      "uncertainty": null
+    },
+    {
+      "timestamp": "2026-11-10T13:47:00Z",
+      "summary": "login; success; user=analyst-demo; ip=198.51.100.23; host=workstation-7",
+      "evidence_refs": [
+        "auth-logs/auth-003 (event EVT-1003)"
+      ],
+      "uncertainty": null
+    },
+    {
+      "timestamp": "2026-11-10T14:01:00Z",
+      "summary": "http_request; success; user=analyst-demo; ip=8.8.8.8; host=app-01",
+      "evidence_refs": [
+        "server-logs/srv-004 (event EVT-2004)"
+      ],
+      "uncertainty": null
+    }
+  ],
+  "findings": [
+    {
+      "title": "Failed authentication followed by success",
+      "observed_facts": [
+        "Observed 2 failed and 1 successful login events in the bounded window."
+      ],
+      "inference": "The sequence may indicate password guessing or a user retry; it does not establish compromise.",
+      "evidence_refs": [
+        "auth-logs/auth-001 (event EVT-1001)",
+        "auth-logs/auth-002 (event EVT-1002)",
+        "auth-logs/auth-003 (event EVT-1003)"
+      ],
+      "contradictory_evidence": [],
+      "mitre_mappings": [
+        {
+          "technique_id": "T1110.001",
+          "technique_name": "Brute Force: Password Guessing",
+          "tactic": "Credential Access",
+          "reference_url": "https://attack.mitre.org/techniques/T1110/001/"
+        },
+        {
+          "technique_id": "T1078",
+          "technique_name": "Valid Accounts",
+          "tactic": "Defense Evasion, Persistence, Initial Access",
+          "reference_url": "https://attack.mitre.org/techniques/T1078/"
+        }
+      ]
+    }
+  ],
+  "risk_score": {
+    "overall": 72.5,
+    "components": [
+      {
+        "factor": "Authentication Pattern",
+        "score": 85.0,
+        "weight": 0.35,
+        "explanation": "Multiple authentication failures followed by successful login for the same user."
+      },
+      {
+        "factor": "Threat Intelligence",
+        "score": 10.0,
+        "weight": 0.25,
+        "explanation": "Target public IP(s) evaluated with zero prior abuse reports."
+      },
+      {
+        "factor": "Identity & Asset Impact",
+        "score": 65.0,
+        "weight": 0.2,
+        "explanation": "Specific identity target identified: analyst-demo."
+      },
+      {
+        "factor": "Scope & Lateral Spread",
+        "score": 20.0,
+        "weight": 0.2,
+        "explanation": "Activity is bounded to a single target host."
+      }
+    ],
+    "explanation": "Composite risk 72.5/100 based on weighted signals: auth=85, threat=10, asset=65, scope=20."
+  },
+  "recommended_severity": "high",
+  "severity_rationale": "Repeated failures followed by a success for the same user support elevated review; this is not proof of compromise.",
+  "confidence": "medium",
+  "confidence_limits": [
+    "This demo uses deterministic rules and does not establish user intent, device ownership, or attribution."
+  ],
+  "unknowns": [
+    "Whether the activity was expected by the affected user.",
+    "Whether related endpoint or identity-provider events exist outside the configured sources."
+  ],
+  "recommended_actions": [
+    {
+      "description": "Review the cited authentication events and verify the successful login with the affected user through an established channel.",
+      "rationale": "A same-user failure/success sequence warrants validation while preserving the distinction between observation and compromise.",
+      "urgency": "high",
+      "required_human_role": "SOC analyst",
+      "validation_checks": [
+        "Confirm the user's expected activity and source location.",
+        "Check endpoint and identity provider telemetry for corroborating evidence."
+      ],
+      "advisory_only": true
+    },
+    {
+      "description": "If independent evidence confirms account compromise, follow the organization's approved identity containment procedure.",
+      "rationale": "Containment may be appropriate only after a security lead validates the evidence and impact.",
+      "urgency": "high",
+      "required_human_role": "Incident commander or identity administrator",
+      "validation_checks": [
+        "Validate user identity and business impact.",
+        "Preserve relevant logs and document authorization before any change.",
+        "Confirm the approved recovery and rollback path."
+      ],
+      "advisory_only": true
+    }
+  ],
+  "warnings": [],
+  "audit": [
+    {
+      "event": "investigation_started",
+      "at": "2026-11-11T04:51:53.160836+00:00",
+      "incident_id": "INC-DEMO-1001"
+    },
+    {
+      "event": "read_only_search",
+      "at": "2026-11-11T04:51:53.162821+00:00",
+      "indices": [
+        "auth-logs",
+        "endpoint-logs",
+        "server-logs"
+      ],
+      "fields": [
+        "@timestamp",
+        "event.id",
+        "event.action",
+        "user.name",
+        "source.ip",
+        "host.name",
+        "event.outcome",
+        "message"
+      ],
+      "window_start": "2026-11-09T18:50:00+00:00",
+      "window_end": "2026-11-10T20:50:00+00:00",
+      "max_results": 500,
+      "returned": 4
+    },
+    {
+      "event": "reputation_lookup",
+      "at": "2026-11-11T04:51:53.163110+00:00",
+      "ip": "8.8.8.8",
+      "queried": true
+    },
+    {
+      "event": "report_generated",
+      "at": "2026-11-11T04:51:53.163786+00:00",
+      "event_count": 4,
+      "warning_count": 0
+    }
+  ],
+  "markdown_summary": "# Investigation INC-DEMO-1001\n\nHuman review support only; this is not a confirmed incident verdict.\n\n- Status: completed\n- Search window (UTC): 2026-11-09T18:50:00+00:00 to 2026-11-10T20:50:00+00:00\n- Retrieved events: 4\n- Recommended severity: **high** — Repeated failures followed by a success for the same user support elevated review; this is not proof of compromise.\n\n## Findings\n- **Failed authentication followed by success:** Observed 2 failed and 1 successful login events in the bounded window. Evidence: auth-logs/auth-001 (event EVT-1001), auth-logs/auth-002 (event EVT-1002), auth-logs/auth-003 (event EVT-1003)\n\n## Advisory-only next steps\n- Review the cited authentication events and verify the successful login with the affected user through an established channel. Rationale: A same-user failure/success sequence warrants validation while preserving the distinction between observation and compromise.\n- If independent evidence confirms account compromise, follow the organization's approved identity containment procedure. Rationale: Containment may be appropriate only after a security lead validates the evidence and impact."
+}
